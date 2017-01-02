@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello Qunee for HTML5</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+<body style="margin: 0px">
+<div style="position: absolute; width: 100%; top: 0px; bottom: 0px;" id="canvas" ></div>
+<script src="http://demo.qunee.com/lib/qunee-min.js"></script>
+<!--<script src="../qunee.js"></script>-->
+<script>
+    var graph = new Q.Graph('canvas');
+
+    var hello = graph.createNode("Hello", 0, -150);
+    hello.image = Q.Graphs.server;
+    var qunee = graph.createNode("Qunee", 110, 0);
+    var edge = graph.createEdge("Hello\nQunee", hello, qunee);
+    edge.setStyle(Q.Styles.EDGE_LINE_DASH, [3,4]);
+
+    var CIRCLE = Q.Shapes.getShape(Q.Consts.SHAPE_CIRCLE, 0, 0, 80, 80);
+    var node = graph.createNode("node1");
+    node.setStyle(Q.Styles.LABEL_ANCHOR_POSITION, Q.Position.CENTER_MIDDLE);
+    node.setStyle(Q.Styles.LABEL_POSITION, Q.Position.CENTER_MIDDLE);
+    node.setStyle(Q.Styles.SHADOW_COLOR, '#00F');
+    node.setStyle(Q.Styles.SHADOW_BLUR, 20);
+    node.setStyle(Q.Styles.LABEL_SHADOW_COLOR, '#FFF');
+    node.setStyle(Q.Styles.LABEL_SHADOW_BLUR, 0);
+    node.image = CIRCLE;
+
+</script>
+</body>
+</html>
